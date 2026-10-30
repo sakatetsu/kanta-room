@@ -1,0 +1,243 @@
+
+/* =================================
+   ページ全体の基本設定
+================================= */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    background-color: #faf8f4;
+    color: #44413d;
+    font-family: "Hiragino Kaku Gothic ProN", "Noto Sans JP", sans-serif;
+    line-height: 1.9;
+}
+
+
+/* =================================
+   トップ画面
+================================= */
+
+.hero {
+    min-height: 65vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 60px 20px;
+}
+
+.subtitle {
+    color: #a18b70;
+    font-size: 12px;
+    letter-spacing: 4px;
+}
+
+.hero h1 {
+    font-family: Georgia, serif;
+    font-size: clamp(36px, 7vw, 58px);
+    font-weight: normal;
+    margin: 15px 0;
+}
+
+.intro {
+    color: #777;
+    margin-top: 10px;
+}
+
+.scroll-guide {
+    margin-top: 55px;
+    font-size: 11px;
+    letter-spacing: 3px;
+    color: #a18b70;
+}
+
+
+/* =================================
+   トップの横スクロール写真
+================================= */
+
+.photo-slider {
+    overflow: hidden;
+    width: 100%;
+    padding: 20px 0 80px;
+}
+
+.slider-track {
+    display: flex;
+    width: max-content;
+    gap: 20px;
+    animation: slide 35s linear infinite;
+}
+
+.slider-track img {
+    width: 280px;
+    height: 210px;
+    object-fit: cover;
+    border-radius: 4px;
+}
+
+/* 写真を右から左へ流す */
+@keyframes slide {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-50%);
+    }
+}
+
+
+/* =================================
+   下の写真一覧エリア
+================================= */
+
+.gallery {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 80px 25px 120px;
+    text-align: center;
+}
+
+.gallery h2 {
+    font-family: Georgia, serif;
+    font-size: 34px;
+    font-weight: normal;
+    margin: 10px 0;
+}
+
+.section-description {
+    color: #888;
+    margin-bottom: 55px;
+}
+
+/* 写真を1枚ずつ縦に並べる */
+.photo-list {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+/* 写真とコメントのセット */
+.photo-item {
+    margin-bottom: 100px;
+    text-align: center;
+}
+
+/* 写真 */
+.photo-item img {
+    width: 100%;
+    max-height: 480px;
+    object-fit: cover;
+    border-radius: 4px;
+}
+
+/* 写真のコメント */
+.photo-comment {
+    margin-top: 20px;
+    color: #777;
+    font-size: 16px;
+    letter-spacing: 1px;
+}
+
+
+/* =================================
+   最後のお祝いエリア
+================================= */
+
+.ending {
+    background-color: #f0ebe2;
+    text-align: center;
+    padding: 110px 20px;
+}
+
+.ending h2 {
+    font-family: Georgia, serif;
+    font-size: clamp(30px, 6vw, 44px);
+    font-weight: normal;
+    margin: 20px 0 30px;
+}
+
+.ending p {
+    color: #777;
+}
+
+.ending .last-message {
+    margin-top: 40px;
+    font-size: 18px;
+    color: #806d55;
+}
+
+
+/* =================================
+   フッター
+================================= */
+
+footer {
+    text-align: center;
+    padding: 25px;
+    color: #aaa;
+    font-size: 12px;
+}
+
+
+/* =================================
+   スマートフォン対応
+================================= */
+
+@media (max-width: 600px) {
+
+    .hero {
+        min-height: 60vh;
+    }
+
+    /* 横スクロール写真 */
+    .slider-track img {
+        width: 230px;
+        height: 175px;
+    }
+
+    /* 下の写真 */
+    .photo-list {
+        width: 100%;
+    }
+
+    .photo-item {
+        margin-bottom: 65px;
+    }
+
+    .photo-item img {
+        max-height: 350px;
+    }
+
+    .photo-comment {
+        font-size: 14px;
+    }
+
+    .gallery {
+        padding: 60px 20px 80px;
+    }
+
+    /* 最後のお祝い */
+    .ending {
+        padding: 80px 20px;
+    }
+
+    /* 最後の追伸 */
+    .ps-message {
+        margin-top: 70px;
+        padding-top: 25px;
+        border-top: 1px solid #d8cfc2;
+        color: #999;
+        font-size: 13px;
+        line-height: 2;
+    }
+
+}
